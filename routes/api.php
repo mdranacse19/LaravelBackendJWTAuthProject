@@ -14,7 +14,7 @@ Route::group([ 'middleware' => 'api', 'prefix' => 'auth' ], function ($router) {
 
 });
 
-Route::group([ 'middleware' => 'api' ], function ($router) {
+Route::group([ 'middleware' => ['auth:api'] ], function ($router) {
 
     //ProductController
     Route::resource('/products',ProductController::class)->except([
